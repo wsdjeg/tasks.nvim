@@ -172,7 +172,7 @@ local function open_tasks_list_win()
         \ norelativenumber
         \ winfixheight
         \ nomodifiable
-  set filetype=SpaceVimTasksInfo
+  set filetype=tasks-nvim-info
   ]])
   task_viewer_bufnr = vim.fn.bufnr('%')
   vim.api.nvim_buf_set_keymap(task_viewer_bufnr, 'n', '<Enter>', '', {
