@@ -234,7 +234,7 @@ function M.get_tasks()
 end
 
 function M.setup(opt)
-  config.setup(opt)
+  config.setup(opt or {})
 end
 
 return M

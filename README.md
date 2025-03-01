@@ -34,6 +34,8 @@ require('plug').add({
 
 ```lua
 require('tasks').setup({
+  global_tasks = '~/.tasks.toml',
+  local_tasks = 'tasks.toml',
 })
 ```
 
