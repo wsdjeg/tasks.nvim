@@ -133,7 +133,7 @@ end
 function M.get()
   load()
   for _, provider in ipairs(providers) do
-    vim.tbl_extend(task_config, provider())
+    task_config = vim.tbl_deep_extend('force', task_config, provider())
   end
   init_variables()
   local task = expand_task(pick())
@@ -213,7 +213,7 @@ end
 function M.list()
   load()
   for _, provider in ipairs(providers) do
-    vim.tbl_extend(task_config, provider())
+    task_config = vim.tbl_deep_extend('force', task_config, provider())
   end
   init_variables()
   open_tasks_list_win()
@@ -227,7 +227,7 @@ end
 function M.get_tasks()
   load()
   for _, provider in ipairs(providers) do
-    vim.tbl_extend(task_config, provider())
+    task_config = vim.tbl_deep_extend('force', task_config, provider())
   end
   init_variables()
   return task_config
