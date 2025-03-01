@@ -34,6 +34,7 @@ require('plug').add({
 require('tasks').setup({
   global_tasks = '~/.tasks.toml',
   local_tasks = '.tasks.toml',
+  provider = {'npm'},
 })
 ```
 
@@ -169,7 +170,7 @@ Here is an example:
 
 Currently, this plugin can auto-detect tasks for npm.
 the tasks manager will parse the `package.json` file for npm packages.
-If you have cloned the [eslint-starter](https://github.com/spicydonuts/eslint-starter). for example, pressing `SPC p t r` shows the following list:
+If you have cloned the [eslint-starter](https://github.com/spicydonuts/eslint-starter). for example, pressing `:TasksList` shows the following list:
 
 ![task-auto-detection](https://img.spacevim.org/75089003-471d2c80-558f-11ea-8aea-cbf7417191d9.png)
 
