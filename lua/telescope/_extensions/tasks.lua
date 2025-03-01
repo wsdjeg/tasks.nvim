@@ -20,7 +20,7 @@ local function prepare_project_task_output(register)
 end
 
 local function show_taskconfig(opts)
-  local opts = opts or {}
+  opts = opts or {}
   local register = opts.register or '"'
   local displayer = entry_display.create({
     separator = ' ',
@@ -32,7 +32,6 @@ local function show_taskconfig(opts)
     },
   })
   local function make_display(entry)
-    local n = entry.value.name
     local desc = entry.value.task.description
     if desc == nil then
       desc = entry.value.task.command
