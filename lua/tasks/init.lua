@@ -151,7 +151,7 @@ local function open_task()
   if string.find(line, '^%[.*%]') then
     task = string.sub(vim.fn.matchstr(line, '^\\[.*\\]'), 2, -2)
     vim.cmd('close')
-    require('runner').run_task(expand_task(task_config[task]))
+    require('code-runner').run_task(expand_task(task_config[task]))
   end
 end
 
