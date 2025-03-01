@@ -47,13 +47,13 @@ require('tasks').setup({
 | `:TasksList`       | list all available tasks                                                |
 | `:TasksEdit`       | open local tasks configuration file, use `:TasksEdit!` for global tasks |
 | `:TaskSelect`      | select task to run                                                      |
-| `:Telescope tasks` | fuzzy find tasks(require telescope layer)                               |
+| `:Telescope tasks` | fuzzy find tasks(require `telescope.nvim`)                               |
 
 `:TasksList` will open the tasks manager windows, in the tasks manager windows, you can use `Enter` to run task under the cursor.
 
 ![task_manager](https://img.spacevim.org/94822603-69d0c700-0435-11eb-95a7-b0b4fef91be5.png)
 
-If the `telescope` layer is loaded, you can also use `:Telescope tasks` to fuzzy find specific task, and run the select task.
+If `telescope.nvim` is installed, you can also use `:Telescope tasks` to fuzzy find specific task, and run the select task.
 
 ![fuzzy-task](https://img.spacevim.org/199057483-d5cce17c-2f06-436d-bf7d-24a78d0eeb11.png)
 
