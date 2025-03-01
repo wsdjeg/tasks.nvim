@@ -1,5 +1,8 @@
 # tasks.nvim
 
+> task manager for neovim
+
+## Intro
 
 `tasks.nvim` is a task manager for neovim, which is used to integrate with external tools.
 And it is similar to VSCode's tasks-manager. There are two kinds of task configurations file:
@@ -7,7 +10,8 @@ And it is similar to VSCode's tasks-manager. There are two kinds of task configu
 - `~/.tasks.toml`: global tasks configuration
 - `.tasks.toml`: project local tasks configuration
 
-
+The tasks defined in the global tasks configuration can be overrided by project local
+tasks configuration.
 
 ## Install
 
@@ -26,25 +30,33 @@ require('plug').add({
 })
 ```
 
-The tasks defined in the global tasks configuration can be overrided by project local
-tasks configuration.
+## Setup
 
-| Key Bindings | Descriptions                              |
-| ------------ | ----------------------------------------- |
-| `SPC p t e`  | edit tasks configuration file             |
-| `SPC p t r`  | select task to run                        |
-| `SPC p t l`  | list all available tasks                  |
-| `SPC p t f`  | fuzzy find tasks(require telescope layer) |
+```lua
+require('tasks').setup({
+})
+```
 
-The `SPC p t l` will open the tasks manager windows, in the tasks manager windows, you can use `Enter` to run task under the cursor.
+## Usage
+
+### Commands
+
+| Key Bindings       | Descriptions                                                            |
+| ------------------ | ----------------------------------------------------------------------- |
+| `:TasksList`       | list all available tasks                                                |
+| `:TasksEdit`       | open local tasks configuration file, use `:TasksEdit!` for global tasks |
+| `:TaskSelect`      | select task to run                                                      |
+| `:Telescope tasks` | fuzzy find tasks(require telescope layer)                               |
+
+`:TasksList` will open the tasks manager windows, in the tasks manager windows, you can use `Enter` to run task under the cursor.
 
 ![task_manager](https://img.spacevim.org/94822603-69d0c700-0435-11eb-95a7-b0b4fef91be5.png)
 
-If the `telescope` layer is loaded, you can also use `SPC p t f` to fuzzy find specific task, and run the select task.
+If the `telescope` layer is loaded, you can also use `:Telescope tasks` to fuzzy find specific task, and run the select task.
 
 ![fuzzy-task](https://img.spacevim.org/199057483-d5cce17c-2f06-436d-bf7d-24a78d0eeb11.png)
 
-#### Custom tasks
+### Custom tasks
 
 This is a basic task configuration for running `echo hello world`,
 and print the results to the runner window.
@@ -80,7 +92,7 @@ The following task properties are available:
 **Note**: When a new task is executed, it will kill the previous task. If you want to keep the task,
 run it in background by setting `isBackground` to `true`.
 
-SpaceVim supports variable substitution in the task properties, The following predefined variables are supported:
+`tasks.nvim` supports variable substitution in the task properties, The following predefined variables are supported:
 
 | Name                        | Description                                            |
 | --------------------------- | ------------------------------------------------------ |
@@ -115,7 +127,7 @@ So you will have the following values for each variable:
 | \${fileExtname}             | `.ext`                                             |
 | \${lineNumber}              | line number of the cursor                          |
 
-#### Task Problems Matcher
+### Task Problems Matcher
 
 Problem matcher is used to capture the message in the task output
 and show a corresponding problem in quickfix windows.
@@ -153,15 +165,15 @@ Here is an example:
       message = 4
 ```
 
-#### Task auto-detection
+### Task auto-detection
 
-Currently, SpaceVim can auto-detect tasks for npm.
+Currently, this plugin can auto-detect tasks for npm.
 the tasks manager will parse the `package.json` file for npm packages.
 If you have cloned the [eslint-starter](https://github.com/spicydonuts/eslint-starter). for example, pressing `SPC p t r` shows the following list:
 
 ![task-auto-detection](https://img.spacevim.org/75089003-471d2c80-558f-11ea-8aea-cbf7417191d9.png)
 
-#### Task provider
+### Task provider
 
 Some tasks can be automatically detected by the task provider. For example,
 a Task Provider could check if there is a specific build file, such as `package.json`,
@@ -207,8 +219,6 @@ end
 task.reg_provider(make_tasks)
 ```
 
-With the above configuration, you will see the following tasks in the SpaceVim repo:
+With the above configuration, you will see the following tasks:
 
 ![task-make](https://img.spacevim.org/75105016-084cac80-564b-11ea-9fe6-75d86a0dbb9b.png)
-
-

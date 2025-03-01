@@ -44,8 +44,7 @@ end
 
 local function init_variables()
   local ok = pcall(function()
-    variables.workspaceFolder =
-      util.unify_path(require('rooter').current_root())
+    variables.workspaceFolder = util.unify_path(require('rooter').current_root())
   end)
   if not ok then
     variables.workspaceFolder = vim.fn.getcwd()
@@ -123,11 +122,11 @@ local function expand_task(task)
   return task
 end
 
-function M.edit(...)
-  if select(1, ...) then
-    vim.cmd('e ~/.SpaceVim.d/tasks.toml')
+function M.edit(global)
+  if global then
+    vim.cmd.edit(config.global_tasks)
   else
-    vim.cmd('e .SpaceVim.d/tasks.toml')
+    vim.cmd.edit(config.local_tasks)
   end
 end
 

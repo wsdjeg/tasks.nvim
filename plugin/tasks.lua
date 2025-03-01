@@ -1,0 +1,11 @@
+vim.api.nvim_create_user_command('TasksList', function(opt)
+  require('tasks').list()
+end, {})
+vim.api.nvim_create_user_command('TasksEdit', function(opt)
+  require('tasks').edit(opt.bang)
+end, {})
+vim.api.nvim_create_user_command('TasksSelect', function(opt)
+  require('tasks').get()
+end, {})
+
+require('tasks').setup()
