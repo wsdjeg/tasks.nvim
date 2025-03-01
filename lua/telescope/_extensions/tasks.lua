@@ -92,6 +92,6 @@ end
 return require('telescope').register_extension({
   exports = {
     -- Default when to argument is given, i.e. :Telescope neoyank
-    task = run,
+    tasks = run,
   },
 })
