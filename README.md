@@ -1,11 +1,9 @@
 # tasks.nvim
 
-> task manager for neovim
-
-## Intro
-
 `tasks.nvim` is a task manager for neovim, which is used to integrate with external tools.
-And it is similar to VSCode's tasks-manager. There are two kinds of task configurations file:
+It is similar to VSCode's tasks-manager.
+
+There are two kinds of task configurations file by default:
 
 - `~/.tasks.toml`: global tasks configuration
 - `.tasks.toml`: project local tasks configuration
@@ -35,7 +33,7 @@ require('plug').add({
 ```lua
 require('tasks').setup({
   global_tasks = '~/.tasks.toml',
-  local_tasks = 'tasks.toml',
+  local_tasks = '.tasks.toml',
 })
 ```
 
