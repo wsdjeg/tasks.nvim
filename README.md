@@ -3,6 +3,8 @@
 `tasks.nvim` is a task manager for neovim, which is used to integrate with external tools.
 It is inspired by VSCode's tasks-manager.
 
+![task_manager](https://img.spacevim.org/94822603-69d0c700-0435-11eb-95a7-b0b4fef91be5.png)
+
 <!-- vim-markdown-toc GFM -->
 
 * [Install](#install)
@@ -63,8 +65,6 @@ require('tasks').setup({
 | `:Telescope tasks` | fuzzy find tasks(require `telescope.nvim`)                              |
 
 `:TasksList` will open the tasks manager windows, in the tasks manager windows, you can use `Enter` to run task under the cursor.
-
-![task_manager](https://img.spacevim.org/94822603-69d0c700-0435-11eb-95a7-b0b4fef91be5.png)
 
 If `telescope.nvim` is installed, you can also use `:Telescope tasks` to fuzzy find specific task, and run the select task.
 
