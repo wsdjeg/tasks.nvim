@@ -1,7 +1,20 @@
 # tasks.nvim
 
 `tasks.nvim` is a task manager for neovim, which is used to integrate with external tools.
-It is similar to VSCode's tasks-manager.
+It is inspired by VSCode's tasks-manager.
+
+<!-- vim-markdown-toc GFM -->
+
+* [Install](#install)
+* [Setup](#setup)
+* [Usage](#usage)
+    * [Commands](#commands)
+    * [Custom tasks](#custom-tasks)
+    * [Task Problems Matcher](#task-problems-matcher)
+    * [Task auto-detection](#task-auto-detection)
+    * [Task provider](#task-provider)
+
+<!-- vim-markdown-toc -->
 
 There are two kinds of task configurations file by default:
 
@@ -47,7 +60,7 @@ require('tasks').setup({
 | `:TasksList`       | list all available tasks                                                |
 | `:TasksEdit`       | open local tasks configuration file, use `:TasksEdit!` for global tasks |
 | `:TaskSelect`      | select task to run                                                      |
-| `:Telescope tasks` | fuzzy find tasks(require `telescope.nvim`)                               |
+| `:Telescope tasks` | fuzzy find tasks(require `telescope.nvim`)                              |
 
 `:TasksList` will open the tasks manager windows, in the tasks manager windows, you can use `Enter` to run task under the cursor.
 
@@ -81,33 +94,33 @@ To run the task in the background, you need to set `isBackground` to `true`:
 
 The following task properties are available:
 
-| Name           | Description                                                                             |
-| -------------- | --------------------------------------------------------------------------------------- |
-| command        | The actual command to execute.                                                          |
-| args           | The arguments passed to the command, it should be a list of strings and may be omitted. |
-| options        | Override the defaults for `cwd`,`env` or `shell`.                                       |
-| isBackground   | Specifies whether the task should run in the background. by default, it is `false`.     |
-| description    | Short description of the task                                                           |
-| problemMatcher | Problems matcher of the task                                                            |
+| Name             | Description                                                                             |
+| ---------------- | --------------------------------------------------------------------------------------- |
+| `command`        | The actual command to execute.                                                          |
+| `args`           | The arguments passed to the command, it should be a list of strings and may be omitted. |
+| `options`        | Override the defaults for `cwd`,`env` or `shell`.                                       |
+| `isBackground`   | Specifies whether the task should run in the background. by default, it is `false`.     |
+| `description`    | Short description of the task                                                           |
+| `problemMatcher` | Problems matcher of the task                                                            |
 
 **Note**: When a new task is executed, it will kill the previous task. If you want to keep the task,
 run it in background by setting `isBackground` to `true`.
 
 `tasks.nvim` supports variable substitution in the task properties, The following predefined variables are supported:
 
-| Name                        | Description                                            |
-| --------------------------- | ------------------------------------------------------ |
-| \${workspaceFolder}         | The project's root directory                           |
-| \${workspaceFolderBasename} | The name of current project's root directory           |
-| \${file}                    | The path of current file                               |
-| \${relativeFile}            | The current file relative to project root              |
-| \${relativeFileDirname}     | The current file's dirname relative to workspaceFolder |
-| \${fileBasename}            | The current file's basename                            |
-| \${fileBasenameNoExtension} | The current file's basename without file extension     |
-| \${fileDirname}             | The current file's dirname                             |
-| \${fileExtname}             | The current file's extension                           |
-| \${cwd}                     | The task runner's current working directory on startup |
-| \${lineNumber}              | The current selected line number in the active file    |
+| Name                          | Description                                            |
+| ----------------------------- | ------------------------------------------------------ |
+| `\${workspaceFolder}`         | The project's root directory                           |
+| `\${workspaceFolderBasename}` | The name of current project's root directory           |
+| `\${file}`                    | The path of current file                               |
+| `\${relativeFile}`            | The current file relative to project root              |
+| `\${relativeFileDirname}`     | The current file's dirname relative to workspaceFolder |
+| `\${fileBasename}`            | The current file's basename                            |
+| `\${fileBasenameNoExtension}` | The current file's basename without file extension     |
+| `\${fileDirname}`             | The current file's dirname                             |
+| `\${fileExtname}`             | The current file's extension                           |
+| `\${cwd}`                     | The task runner's current working directory on startup |
+| `\${lineNumber}`              | The current selected line number in the active file    |
 
 For example: Supposing that you have the following requirements:
 
@@ -115,18 +128,18 @@ A file located at `/home/your-username/your-project/folder/file.ext` opened in y
 The directory `/home/your-username/your-project` opened as your root workspace.
 So you will have the following values for each variable:
 
-| Name                        | Value                                              |
-| --------------------------- | -------------------------------------------------- |
-| \${workspaceFolder}         | `/home/your-username/your-project/`                |
-| \${workspaceFolderBasename} | `your-project`                                     |
-| \${file}                    | `/home/your-username/your-project/folder/file.ext` |
-| \${relativeFile}            | `folder/file.ext`                                  |
-| \${relativeFileDirname}     | `folder/`                                          |
-| \${fileBasename}            | `file.ext`                                         |
-| \${fileBasenameNoExtension} | `file`                                             |
-| \${fileDirname}             | `/home/your-username/your-project/folder/`         |
-| \${fileExtname}             | `.ext`                                             |
-| \${lineNumber}              | line number of the cursor                          |
+| Name                          | Value                                              |
+| ----------------------------- | -------------------------------------------------- |
+| `\${workspaceFolder}`         | `/home/your-username/your-project/`                |
+| `\${workspaceFolderBasename}` | `your-project`                                     |
+| `\${file}`                    | `/home/your-username/your-project/folder/file.ext` |
+| `\${relativeFile}`            | `folder/file.ext`                                  |
+| `\${relativeFileDirname}`     | `folder/`                                          |
+| `\${fileBasename}`            | `file.ext`                                         |
+| `\${fileBasenameNoExtension}` | `file`                                             |
+| `\${fileDirname}`             | `/home/your-username/your-project/folder/`         |
+| `\${fileExtname}`             | `.ext`                                             |
+| `\${lineNumber}`              | line number of the cursor                          |
 
 ### Task Problems Matcher
 
