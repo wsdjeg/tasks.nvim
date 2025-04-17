@@ -15,6 +15,9 @@ It is inspired by VSCode's tasks-manager.
     * [Task Problems Matcher](#task-problems-matcher)
     * [Task auto-detection](#task-auto-detection)
     * [Task provider](#task-provider)
+* [Debug](#debug)
+* [Self-Promotion](#self-promotion)
+* [License](#license)
 
 <!-- vim-markdown-toc -->
 
@@ -236,3 +239,36 @@ task.reg_provider(make_tasks)
 With the above configuration, you will see the following tasks:
 
 ![task-make](https://img.spacevim.org/75105016-084cac80-564b-11ea-9fe6-75d86a0dbb9b.png)
+
+## Debug
+
+Debug with logger.nvim:
+
+```lua
+require('plug').add({
+  {
+    'wsdjeg/tasks.nvim',
+    depends = {
+      {
+        'wsdjeg/code-runner.nvim',
+      },
+      {
+        'wsdjeg/logger.nvim',
+      },
+    },
+  },
+})
+```
+
+## Self-Promotion
+
+Like this plugin? Star the repository on
+GitHub.
+
+Love this plugin? Follow [me](https://wsdjeg.net/) on
+[GitHub](https://github.com/wsdjeg) and
+[Twitter](http://twitter.com/wsdtty).
+
+## License
+
+This project is licensed under the GPL-3.0 License.
