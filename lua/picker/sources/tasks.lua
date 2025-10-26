@@ -37,7 +37,6 @@ function M.get()
       task_type,
       string.rep(' ', widths[2].width - #task_type - 3),
       background,
-      task_type,
       string.rep(' ', widths[3].width - #background - 3),
       desc
     )
