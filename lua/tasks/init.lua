@@ -20,7 +20,7 @@ local providers = {}
 -- load apis
 
 local util = require('tasks.utils')
-local toml = require('tasks.toml')
+local toml = require('toml')
 local log = require('tasks.logger')
 local config = require('tasks.config')
 

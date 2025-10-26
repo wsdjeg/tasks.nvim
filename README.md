@@ -42,6 +42,7 @@ require('plug').add({
     depends = {
       {
         'wsdjeg/code-runner.nvim',
+        'wsdjeg/toml.nvim',
       },
     },
   },
