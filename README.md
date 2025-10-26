@@ -7,17 +7,19 @@ It is inspired by VSCode's tasks-manager.
 
 <!-- vim-markdown-toc GFM -->
 
-* [Install](#install)
-* [Setup](#setup)
-* [Usage](#usage)
-    * [Commands](#commands)
-    * [Custom tasks](#custom-tasks)
-    * [Task Problems Matcher](#task-problems-matcher)
-    * [Task auto-detection](#task-auto-detection)
-    * [Task provider](#task-provider)
-* [Debug](#debug)
-* [Self-Promotion](#self-promotion)
-* [License](#license)
+- [Install](#install)
+- [Setup](#setup)
+- [Usage](#usage)
+    - [Commands](#commands)
+    - [Telescope extension](#telescope-extension)
+    - [picker.nvim extension](#pickernvim-extension)
+    - [Custom tasks](#custom-tasks)
+    - [Task Problems Matcher](#task-problems-matcher)
+    - [Task auto-detection](#task-auto-detection)
+    - [Task provider](#task-provider)
+- [Debug](#debug)
+- [Self-Promotion](#self-promotion)
+- [License](#license)
 
 <!-- vim-markdown-toc -->
 
@@ -60,18 +62,27 @@ require('tasks').setup({
 
 ### Commands
 
-| Key Bindings       | Descriptions                                                            |
-| ------------------ | ----------------------------------------------------------------------- |
-| `:TasksList`       | list all available tasks                                                |
-| `:TasksEdit`       | open local tasks configuration file, use `:TasksEdit!` for global tasks |
-| `:TaskSelect`      | select task to run                                                      |
-| `:Telescope tasks` | fuzzy find tasks(require `telescope.nvim`)                              |
+| Key Bindings  | Descriptions                                                            |
+| ------------- | ----------------------------------------------------------------------- |
+| `:TasksList`  | list all available tasks                                                |
+| `:TasksEdit`  | open local tasks configuration file, use `:TasksEdit!` for global tasks |
+| `:TaskSelect` | select task to run                                                      |
 
 `:TasksList` will open the tasks manager windows, in the tasks manager windows, you can use `Enter` to run task under the cursor.
+
+### Telescope extension
 
 If `telescope.nvim` is installed, you can also use `:Telescope tasks` to fuzzy find specific task, and run the select task.
 
 ![fuzzy-task](https://img.spacevim.org/199057483-d5cce17c-2f06-436d-bf7d-24a78d0eeb11.png)
+
+### picker.nvim extension
+
+This plugin also provides a source for [picker.nvim](https://github.com/wsdjeg/picker.nvim).
+
+```
+:Picker tasks
+```
 
 ### Custom tasks
 
@@ -271,4 +282,5 @@ Love this plugin? Follow [me](https://wsdjeg.net/) on
 
 ## License
 
+This project is licensed under the GPL-3.0 License.
 This project is licensed under the GPL-3.0 License.
