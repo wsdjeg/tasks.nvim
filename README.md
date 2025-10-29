@@ -125,17 +125,17 @@ run it in background by setting `isBackground` to `true`.
 
 | Name                          | Description                                            |
 | ----------------------------- | ------------------------------------------------------ |
-| `\${workspaceFolder}`         | The project's root directory                           |
-| `\${workspaceFolderBasename}` | The name of current project's root directory           |
-| `\${file}`                    | The path of current file                               |
-| `\${relativeFile}`            | The current file relative to project root              |
-| `\${relativeFileDirname}`     | The current file's dirname relative to workspaceFolder |
-| `\${fileBasename}`            | The current file's basename                            |
-| `\${fileBasenameNoExtension}` | The current file's basename without file extension     |
-| `\${fileDirname}`             | The current file's dirname                             |
-| `\${fileExtname}`             | The current file's extension                           |
-| `\${cwd}`                     | The task runner's current working directory on startup |
-| `\${lineNumber}`              | The current selected line number in the active file    |
+| `${workspaceFolder}`         | The project's root directory                           |
+| `${workspaceFolderBasename}` | The name of current project's root directory           |
+| `${file}`                    | The path of current file                               |
+| `${relativeFile}`            | The current file relative to project root              |
+| `${relativeFileDirname}`     | The current file's dirname relative to workspaceFolder |
+| `${fileBasename}`            | The current file's basename                            |
+| `${fileBasenameNoExtension}` | The current file's basename without file extension     |
+| `${fileDirname}`             | The current file's dirname                             |
+| `${fileExtname}`             | The current file's extension                           |
+| `${cwd}`                     | The task runner's current working directory on startup |
+| `${lineNumber}`              | The current selected line number in the active file    |
 
 For example: Supposing that you have the following requirements:
 
@@ -145,16 +145,16 @@ So you will have the following values for each variable:
 
 | Name                          | Value                                              |
 | ----------------------------- | -------------------------------------------------- |
-| `\${workspaceFolder}`         | `/home/your-username/your-project/`                |
-| `\${workspaceFolderBasename}` | `your-project`                                     |
-| `\${file}`                    | `/home/your-username/your-project/folder/file.ext` |
-| `\${relativeFile}`            | `folder/file.ext`                                  |
-| `\${relativeFileDirname}`     | `folder/`                                          |
-| `\${fileBasename}`            | `file.ext`                                         |
-| `\${fileBasenameNoExtension}` | `file`                                             |
-| `\${fileDirname}`             | `/home/your-username/your-project/folder/`         |
-| `\${fileExtname}`             | `.ext`                                             |
-| `\${lineNumber}`              | line number of the cursor                          |
+| `${workspaceFolder}`         | `/home/your-username/your-project/`                |
+| `${workspaceFolderBasename}` | `your-project`                                     |
+| `${file}`                    | `/home/your-username/your-project/folder/file.ext` |
+| `${relativeFile}`            | `folder/file.ext`                                  |
+| `${relativeFileDirname}`     | `folder/`                                          |
+| `${fileBasename}`            | `file.ext`                                         |
+| `${fileBasenameNoExtension}` | `file`                                             |
+| `${fileDirname}`             | `/home/your-username/your-project/folder/`         |
+| `${fileExtname}`             | `.ext`                                             |
+| `${lineNumber}`              | line number of the cursor                          |
 
 ### Task Problems Matcher
 
