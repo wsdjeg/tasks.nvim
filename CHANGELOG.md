@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.1](https://github.com/wsdjeg/tasks.nvim/compare/v2.0.0...v2.0.1) (2025-11-23)
+
+
+### Bug Fixes
+
+* fix luarocks dependencies ([3ad9d18](https://github.com/wsdjeg/tasks.nvim/commit/3ad9d18a22e4253985f85e389ee7994f26550d20))
+
 ## [2.0.0](https://github.com/wsdjeg/tasks.nvim/compare/v1.0.0...v2.0.0) (2025-10-29)
 
 
