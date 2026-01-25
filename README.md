@@ -3,6 +3,12 @@
 `tasks.nvim` is a task manager for neovim, which is used to integrate with external tools.
 It is inspired by VSCode's tasks-manager.
 
+[![GitHub License](https://img.shields.io/github/license/wsdjeg/tasks.nvim)](LICENSE)
+[![GitHub Issues or Pull Requests](https://img.shields.io/github/issues/wsdjeg/tasks.nvim)](https://github.com/wsdjeg/tasks.nvim/issues)
+[![GitHub commit activity](https://img.shields.io/github/commit-activity/m/wsdjeg/tasks.nvim)](https://github.com/wsdjeg/tasks.nvim/commits/master/)
+[![GitHub Release](https://img.shields.io/github/v/release/wsdjeg/tasks.nvim)](https://github.com/wsdjeg/tasks.nvim/releases)
+[![luarocks](https://img.shields.io/luarocks/v/wsdjeg/tasks.nvim)](https://luarocks.org/modules/wsdjeg/tasks.nvim)
+
 ![task_manager](https://img.spacevim.org/94822603-69d0c700-0435-11eb-95a7-b0b4fef91be5.png)
 
 <!-- vim-markdown-toc GFM -->
@@ -279,7 +285,7 @@ GitHub.
 
 Love this plugin? Follow [me](https://wsdjeg.net/) on
 [GitHub](https://github.com/wsdjeg) and
-[Twitter](http://twitter.com/wsdtty).
+[Twitter](http://twitter.com/EricWongDEV).
 
 ## License
 
