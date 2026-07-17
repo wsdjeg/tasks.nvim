@@ -5,7 +5,7 @@ help:
 	@echo "Available targets:"
 	@echo "  test            - Run all tests (or specific tests with PATTERN=...)"
 	@echo "  clean           - Clean test cache files and downloaded dependencies"
-	@echo "  install-deps    - Download all test dependencies (luaunit)"
+	@echo "  install-deps    - Download all test dependencies (luaunit, toml.nvim)"
 	@echo ""
 	@echo "Examples:"
 	@echo "  make test                                     # Run all tests"
@@ -13,9 +13,12 @@ help:
 	@echo "  make test PATTERN=test/example_spec.lua       # Full path"
 
 # Install all test dependencies (cross-platform, uses Lua)
+# Uses -u NONE to avoid loading minimal_init.lua, which requires toml.nvim
+# (the very dependency we're trying to install). install_deps.lua only uses
+# vim.fn built-in functions, so no plugin config is needed.
 install-deps:
 	@echo "Installing test dependencies..."
-	@nvim --headless -u test/minimal_init.lua -c "lua dofile('test/install_deps.lua')" -c "qa!"
+	@nvim --headless -u NONE -c "lua dofile('test/install_deps.lua')" -c "qa!"
 
 # Run tests with nvim headless
 # Supports PATTERN parameter to run specific test file(s)
