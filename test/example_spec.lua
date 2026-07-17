@@ -174,5 +174,7 @@ end
 ------------------------------------------------------------------
 -- Run the test suite
 ------------------------------------------------------------------
-os.exit(lu.LuaUnit.run())
+-- Note: os.exit(lu.LuaUnit.run()) is intentionally NOT called here.
+-- The test runner (test/run.lua) loads all test files and runs them
+-- together via runner:runSuite().
 

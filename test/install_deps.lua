@@ -57,6 +57,24 @@ else
   end
 end
 
+-- Install toml.nvim (single-file, self-contained TOML parser)
+-- Source: https://github.com/wsdjeg/toml.nvim/blob/master/lua/toml/init.lua
+-- Downloaded as test/.deps/toml.lua so require('toml') finds it
+local toml_path = deps_dir .. '/toml.lua'
+local toml_url = 'https://raw.githubusercontent.com/wsdjeg/toml.nvim/master/lua/toml/init.lua'
+
+if file_exists(toml_path) then
+  print('toml.nvim already installed')
+else
+  print('Installing toml.nvim...')
+  if download(toml_url, toml_path) then
+    print('toml.nvim installed to ' .. toml_path)
+  else
+    print('[ERROR] Failed to download toml.nvim')
+    os.exit(1)
+  end
+end
+
 print('All dependencies installed.')
 os.exit(0)
 

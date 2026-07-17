@@ -11,9 +11,11 @@ vim.opt.verbose = 1
 
 -- Set up package path for:
 -- 1. lua/?.lua - Main plugin source code (tasks module)
--- 2. test/?.lua - Mock modules (toml.lua)
--- 3. test/.deps/?.lua - Test dependencies (luaunit)
-package.path = 'lua/?.lua;test/?.lua;test/.deps/?.lua;' .. package.path
+-- 2. test/.deps/?.lua - Test dependencies (luaunit, toml.nvim)
+-- 3. test/?.lua - Test helper modules
+-- NOTE: test/.deps/?.lua must come BEFORE test/?.lua so that
+--       require('toml') loads the real toml.nvim, not a mock.
+package.path = 'lua/?.lua;test/.deps/?.lua;test/?.lua;' .. package.path
 vim.opt.runtimepath:prepend('.')
 
 -- Create temporary test directory with test TOML files
@@ -46,6 +48,32 @@ vim.fn.writefile({
   '',
   '[build.options]',
   'cwd = "${workspaceFolder}"',
+  '',
+  '[deploy]',
+  'command = "rsync -avz ./ user@server:/app"',
+  'description = "Deploy to server"',
+  '',
+  '[deploy.options]',
+  'env = { RSYNC_RSH = "ssh -p 2222" }',
+  '',
+  '[clean]',
+  'command = "rm -rf build/"',
+  'description = "Clean build artifacts"',
+  'args = ["--force", "--verbose"]',
+  '',
+  '[clean.linux]',
+  'command = "rm -rf build/"',
+  '',
+  '[clean.windows]',
+  'command = "rmdir /s /q build"',
+  '',
+  '[check]',
+  'command = "lua -v"',
+  'description = "Check lua version"',
+  '',
+  '[check.options]',
+  'cwd = "${workspaceFolder}"',
+  'env = { LUA_PATH = "./?.lua", LUA_CPATH = "./?.so" }',
 }, local_toml)
 
 -- Store test directory globally so test spec files can access it

@@ -7,7 +7,7 @@ local lu = require('luaunit')
 vim.opt.runtimepath:append('.')
 
 -- Setup package.path to support test submodules
-package.path = 'test/?.lua;lua/?.lua;test/.deps/?.lua;' .. package.path
+package.path = 'test/.deps/?.lua;test/?.lua;lua/?.lua;' .. package.path
 
 -- Get test files based on PATTERN parameter
 local function get_test_files()
