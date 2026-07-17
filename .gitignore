@@ -1,0 +1,15 @@
+# Test dependencies (auto-downloaded by make install-deps)
+test/.deps/
+
+# Swap files
+*.swp
+*.swo
+
+# Temporary test output
+test/*.out
+test/*.lua~
+
+# OS files
+.DS_Store
+Thumbs.db
+

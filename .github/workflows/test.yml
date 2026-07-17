@@ -45,7 +45,7 @@ jobs:
       - name: Install dependencies (Windows)
         if: runner.os == 'Windows'
         run: |
-          choco install ripgrep make -y
+          choco install ripgrep curl make -y
 
       - name: Cache test dependencies
         uses: actions/cache@v4
