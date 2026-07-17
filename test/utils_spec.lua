@@ -56,8 +56,11 @@ end
 
 function TestUtilsPath:test_unify_path_relative_to_absolute()
   local result = util.unify_path('./test', ':p')
-  -- Should be an absolute path (starts with / on Unix)
-  lu.assertNotNil(result:match('^/'), 'should be absolute path on Unix')
+  -- Should be an absolute path:
+  --   Unix: starts with /
+  --   Windows: starts with drive letter, e.g. C:/
+  local is_absolute = result:match('^/') ~= nil or result:match('^[a-zA-Z]:/') ~= nil
+  lu.assertTrue(is_absolute, 'should be absolute path, got: ' .. result)
 end
 
 ------------------------------------------------------------------
