@@ -1,5 +1,23 @@
 # Changelog
 
+## [2.0.2](https://github.com/wsdjeg/tasks.nvim/compare/v2.0.1...v2.0.2) (2026-07-17)
+
+
+### Bug Fixes
+
+* **make:** use -u NONE for install-deps to avoid toml circular dependency ([5d26a4c](https://github.com/wsdjeg/tasks.nvim/commit/5d26a4cd71ed3c563f4bfff196254220ac8a77b9))
+
+
+### Documentation
+
+* improve README with features, multi-install, and structured sections ([81ea36d](https://github.com/wsdjeg/tasks.nvim/commit/81ea36d8a9c930a3afe7fb43105f6d7c46d36ef1))
+
+
+### Tests
+
+* replace mock toml with real toml.nvim and add comprehensive test coverage ([1a7c0be](https://github.com/wsdjeg/tasks.nvim/commit/1a7c0bed5c59afe3bbee51fb806ad4e437dcbc4d))
+* **utils:** fix unify_path absolute path check for Windows ([c2c5e5c](https://github.com/wsdjeg/tasks.nvim/commit/c2c5e5c47b89e2b3bbd398a313a0cf208df7ce93))
+
 ## [2.0.1](https://github.com/wsdjeg/tasks.nvim/compare/v2.0.0...v2.0.1) (2025-11-23)
 
 
